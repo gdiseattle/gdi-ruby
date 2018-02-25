@@ -9,7 +9,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes"/>
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
   <link rel="stylesheet" href="reveal/css/reveal.css">
-  <link rel="stylesheet" href="reveal/css/theme/gdicool.css" id="theme">
+  <link rel="stylesheet" href="reveal/css/theme/gdisunny.css" id="theme">
   <link rel="stylesheet" href="reveal/lib/css/dark.css">
   <!-- If use the PDF print sheet so students can print slides-->
   <link rel="stylesheet" href="reveal/css/print/pdf.css" type="text/css" media="print">
@@ -25,11 +25,9 @@
 </section>
 <section>
   <h3>Welcome!</h3>
-  <div class="left-align">
-    <p>Girl Develop It is here to provide affordable and accessible programs to learn software through mentorship and
-      hands-on instruction.
-    </p>
-    <p class="green">Some "rules"</p>
+  <div>
+    <p>Girl Develop It is here to provide affordable and accessible programs to learn software through mentorship and hands-on instruction.</p><br>
+    <p class="blue">Some "Rules":</p>
     <ul>
       <li>We are here for you!</li>
       <li>Every question is important.</li>
@@ -37,11 +35,6 @@
       <li>Have fun!</li>
     </ul>
   </div>
-</section>
-<!-- Homework Review - 10 min -->
-<section>
-  <h3>Homework Discussion</h3>
-  <p>How was last week's homework? Do you have any questions or concepts that you'd like to discuss?</p>
 </section>
 <!-- Setting the Stage - 10 min -->
 <section>
@@ -104,12 +97,12 @@
 <section>
   <h3>Who is using Ruby?</h3>
   <ul>
-    <li>Hulu</li>
-    <li>LivingSocial</li>
     <li>Groupon</li>
+    <li>Airbnb</li>
+    <li>Shopify</li>
+    <li>Soundcloud</li>
     <li>Basecamp</li>
     <li>Github</li>
-    <li>#2 in 2014 on <a href="http://adambard.com/blog/top-github-languages-for-2013-so-far/">github</a></li>
     <li>More <a href="https://www.ruby-lang.org/en/documentation/success-stories/">Success Stories</a></li>
   </ul>
 </section>
@@ -117,7 +110,7 @@
 <section>
   <h3>Working with IRB</h3>
   <ul>
-    <li class="fragment">IRB is a command line interface to ruby that is installed when we install Ruby. It works like a calculator and is a
+    <li class="fragment">IRB ("interactive ruby") is a command line interface to Ruby that is installed when we install Ruby. It works like a calculator and is a
       great way to get started quickly.
     </li>
     <li class="fragment">Open: In the terminal, type `irb`</li>
@@ -150,12 +143,6 @@
       starting point when searching for help online.
     </li>
   </ul>
-  <pre>
-    <code contenteditable class="ruby fragment">
-  irb> hi
-  NameError: undefined local variable or method `hi' for main:Object
-    </code>
-  </pre>
 </section>
 <!-- Variables - 10 min -->
 <section>
@@ -166,7 +153,7 @@
     <li class="fragment">They are called variable because the information they reference may change.</li>
   </ul>
   <pre><code contenteditable class="ruby fragment">
-  # Everything after this pound sign will not be evaluated.
+  # Everything after this pound/hash sign will not be evaluated.
   # These are called comments and I will use them to annotate code
   age = 50
   days_in_year = 365
@@ -178,7 +165,7 @@
   <h3>Ruby's Variables</h3>
   <ul>
     <li class="fragment">Ruby has three kinds of variables, one kind of constant and exactly two pseudo-variables.</li>
-    <li class="fragment">A local variable starts with a lower case letter or an underscore character (_) and consists entirely of letters, numbers and underscores.</li>
+    <li class="fragment">A local variable starts with a lower case letter or an underscore character and consists entirely of letters, numbers and underscores.</li>
   </ul>
   <pre><code contenteditable class="ruby fragment">
   age = 50
@@ -233,27 +220,26 @@
   # error
   name
 
-  name = "Heather"
+  name = "Jess"
   defined?(name)
   </code></pre>
 </section>
 <!-- Data Types - 10 min -->
 <section>
   <h2>Data Types</h2>
-  <p class="fragment">Built-in: Numbers, Strings, Symbols, Booleans, Regular Expressions, Arrays, Ranges & Hashes</p>
   <ul>
+    <li class="fragment">Numbers, Strings, Symbols, Booleans, Regular Expressions, Arrays, Ranges & Hashes</li>
     <li class="fragment">Data always has a "type"</li>
     <li class="fragment">You will hear the words Class/Type/Object used interchangeably</li>
-    <li class="fragment">Let's explore a few built in Objects</li>
   </ul>
   <pre><code contenteditable class="ruby fragment">
   irb> 1.class
-  => Fixnum
-  irb> "Hello".class
-  => String
+  => Integer
   irb> 1.0022.class
   => Float
-  irb> [1,2,3].class
+  irb> "Hello".class
+  => String
+  irb> [1, 2, 3].class
   => Array
   </code></pre>
 </section>
@@ -277,12 +263,12 @@
 <section>
   <h3>String Practice</h3>
   <pre><code contenteditable class="ruby">
-  "Heather".upcase
-  "Heather".downcase
-  "heather".capitalize
+  "Jessica".upcase
+  "Jessica".downcase
+  "jessica".capitalize
   "Hello".reverse
-  "Heather".length
-  "Heather Moore".swapcase
+  "Jessica".length
+  "Jessica Weeber".swapcase
   "".empty?
   </code></pre>
   <p>What is the reverse of your name?</p>
@@ -293,16 +279,14 @@
 <section>
   <h3>Numbers</h3>
   <p>Numeric data comes in two types: <strong>Integers</strong> and <strong>Floats</strong></p>
-  <p>Integers are either <strong>Fixnum</strong> or <strong>Bignum</strong>. They do not have decimals.</p>
-  <pre><code contenteditable class="ruby fragment">
-    irb> 1_000_000_000_000_000_000.class
-     => Fixnum
-    irb> 1_000_000_000_000_000_000_000.class
-     => Bignum
-  </code></pre>
+  <p>Integers do not have decimals.</p>
   <p>Floats are numbers with at least one number to the left of a decimal point.</p>
   <pre><code contenteditable class="ruby fragment">
-    irb> 1.001.class
+    irb> 55.class
+    => Integer
+    irb> 55_000.class
+    => Integer
+    irb> 55.001.class
      => Float
   </code></pre>
 </section>
@@ -377,13 +361,9 @@
     <li class="fragment">Methods define the behavior for an Object.</li>
     <li class="fragment">String Objects can <strong>reverse</strong>, for example.</li>
     <li class="fragment">Some methods are accessed using our friend 'dot' and some are standalone.</li>
-    <li class="fragment">Let's call some methods</li>
   </ul>
   <pre>
     <code contenteditable class="ruby fragment">
-  irb> puts "hello"
-  hello
-  => nil
   irb> "2".to_i
   => 2
   irb> 2.to_s
@@ -395,24 +375,20 @@
 </section>
 <section>
   <h3>User Input</h3>
-  <ul>
-    <li class="fragment">To obtain user input, use `gets`</li>
-    <li class="fragment">To print out information, use `puts`</li>
-    <li class="fragment">Let's create our first program together</li>
-  </ul>
-  </br>
-  </br>
-  <p class="fragment">Put the code below in a file and save it as name.rb</p>
-  <pre><code contenteditable class="fragment ruby">
-  puts 'Hello there, and what\'s your name?'
-  name = gets
-  puts 'Your name is ' + name.chomp! + '? What a lovely name!'
-  puts 'Pleased to meet you, ' + name + '. :)'
-  </code></pre>
-  <p class="fragment">Run your program from the command line:</p>
-  <pre><code class="fragment">
-ruby name.rb 
-  </code></pre>
+    <p class="fragment">To obtain user input, use `gets`</p>
+    <p class="fragment">To print out information, use `puts` or `print`</p>
+    <p class="fragment">Let's create our first Ruby program together!</p><br>
+    <p class="fragment">Put the code below in a file and save it as name.rb</p>
+    <pre><code contenteditable class="fragment ruby">
+      puts "Hello there, and what's your name?"
+      name = gets
+      puts "Your name is " + name.chomp! + "? What a lovely name!"
+      puts "Pleased to meet you, " + name.chomp! + ". :)"
+    </code></pre>
+    <p class="fragment">Run your program from the command line:</p>
+    <pre><code class="fragment">
+      ruby name.rb 
+    </code></pre>
 </section>
 <section>
   <h3>Let's Develop It</h3>
@@ -425,28 +401,6 @@ ruby name.rb
     </code></pre>
   </ul>
 </section>
-<section>
-  <h3>Bonus Feature 1</h3>
-  <ul>
-    <li>Update your code to return a message in all capital letters.</li>
-  </ul>
-  <pre><code class="ruby">
-  # YOU ARE 5 YEARS OLD IN DOG YEARS
-  </code></pre>
-</section>
-<section>
-  <h3>Bonus Feature 2</h3>
-  <ul>
-    <li>Update your code to return a message in all capital letters, reversed with a count of the characters returned in parens.</li>
-  </ul>
-  <pre><code class="ruby">
-  # YOU ARE 5 YEARS OLD IN DOG YEARS (32 characters)
-  </code></pre>
-</section>
-<section>
-  <h3>Questions?</h3>
-</section>
-
 <section>
   <h3>Homework</h3>
   <p><strong>Practice:</strong> Write a command line program that asks the user for the year they were born, then calculates their age in years, days, and seconds. Tell the user how old they are in these different formats. (Note: you'll be using 'gets' and 'puts' in this program, along with some math)</p>
