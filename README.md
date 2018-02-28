@@ -1,6 +1,6 @@
 # Intro to Ruby
 
-The slides for this course can be viewed [here](http://cherimarie.github.io/gdi-ruby)
+The slides for this course can be viewed [here](http://gdiseattle.github.io/gdi-ruby/)
  
 This is an Intro to Ruby course, intended for eventual inclusion in the Girl Develop It Core Curriculum. All material by Cheri Allen and Heather Moore. Thanks to Chris Pine and Sandi Metz for inspirational books.
 
