@@ -42,7 +42,7 @@
   <ul>
     <li class="fragment">What is programming?</li>
     <li class="fragment">Why Ruby?</li>
-    <li class="fragment">Variables, Arithmetic & Objects</li>
+    <li class="fragment">Variables, Arithmetic &amp; Objects</li>
     <li class="fragment">Methods and Error Messages</li>
   </ul>
 </section>
@@ -106,17 +106,15 @@
     <li>More <a href="https://www.ruby-lang.org/en/documentation/success-stories/">Success Stories</a></li>
   </ul>
 </section>
-<!-- Basic IRB - 10 min -->
+<!-- Using a REPL - 10 min -->
 <section>
-  <h3>Working with IRB</h3>
+  <h3>Working with a Repl</h3>
   <ul>
-    <li class="fragment">IRB ("interactive ruby") is a command line interface to Ruby that is installed when we install Ruby. It works like a calculator and is a
-      great way to get started quickly.
+    <li class="fragment">Repl stands for: Read, Evaluate, Print, Loop. It's an interactive programming environment where you can write and execute code. Using a Repl is great way to get started quickly, as you don't need to install anything to get started.
     </li>
-    <li class="fragment">Open: In the terminal, type `irb`</li>
-    <li class="fragment">Quit: Type `quit` and then press `enter`</li>
+    <li class="fragment">Open a browser and go to: <a href="https://repl.it/">repl.it</a></li>
+    <li class="fragment">In the dropdown, choose Ruby.</li>
     <li class="fragment">Follow along with the examples in the slides. Type them in!</li>
-    <li class="fragment">Feel free to explore as well. You will not accidentally break things.</li>
   </ul>
 </section>
 <section>
@@ -228,7 +226,7 @@
 <section>
   <h2>Data Types</h2>
   <ul>
-    <li class="fragment">Numbers, Strings, Symbols, Booleans, Regular Expressions, Arrays, Ranges & Hashes</li>
+    <li class="fragment">Numbers, Strings, Symbols, Booleans, Regular Expressions, Arrays, Ranges &amp; Hashes</li>
     <li class="fragment">Data always has a "type"</li>
     <li class="fragment">You will hear the words Class/Type/Object used interchangeably</li>
   </ul>
@@ -247,34 +245,34 @@
   <h3>Strings</h3>
   <p>Strings are characters inside double or single quotes.</p>
   <pre><code contenteditable class="ruby fragment">
-  a = 'Hello '
-  b = "World"
-  c = a + b
-  c.reverse
+  first_string = 'Hello '
+  second_string = "World"
+  combined_string = first_string + second_string
+  combined_string.reverse
   => "dlroW olleH"
   </code></pre>
   <pre><code contenteditable class="ruby fragment">
-  a = "Spam "
-  b = a * 4
+  name = "Jessica "
+  name_multiple = name * 4
   # Here multiplying a by 4 concatenates (links) four strings together
-  =>"Spam Spam Spam Spam "
+  =>"Jessica Jessica Jessica Jessica "
   </code></pre>
 </section>
 <section>
   <h3>String Practice</h3>
   <pre><code contenteditable class="ruby">
-  "Jessica".upcase
-  "Jessica".downcase
-  "jessica".capitalize
-  "Hello".reverse
-  "Jessica".length
-  "Jessica Weeber".swapcase
+  name = "Jessica"
+  name.upcase
+  name.downcase
+  name.capitalize
+  name.length
+  name.swapcase
   "".empty?
   </code></pre>
   <p>What is the reverse of your name?</p>
   <p>How many characters long is your name?</p>
   <p>Can you repeat the word hello 100 times?</p>
-  <p>What is the 5th character of my name?</p>
+  <p>What is the 5th character of my name (or your name)?</p>
 </section>
 <section>
   <h3>Numbers</h3>
@@ -296,15 +294,13 @@
   7/8
   7.0/8.0
   3.14.to_s
-  3.14.to_i
   1 + "2"
-  1 + "2".to_i
   (1 + 2) * 3
   1 + (2 * 3)
   </code></pre>
-  <p>How many seconds are in an hour?</p>
-  <p>How many minutes are in a week?</p>
-  <p>How many years old are you if you've been alive 1 million seconds?</p>
+  <p>What is the number 1.25976 rounded to a precision of 2?</p>
+  <p>What is the the smallest possible integer that is greater than or equal to 5.2?</p>
+  <p>How would you turn the number 42 into a float? How would you turn the float 56.25 into an integer?</p>
 </section>
 <section>
   <h3>Symbols</h3>
@@ -333,7 +329,7 @@
   </code></pre>
 </section>
 <section>
-  <h3>Arrays, Ranges & Hashes</h3>
+  <h3>Arrays, Ranges &amp; Hashes</h3>
   <p>We will also leave these data types for the next class</p>
   <p class="fragment">Examples of what they will look like:</p>
   <pre><code contenteditable class="ruby fragment">
@@ -375,26 +371,22 @@
 </section>
 <section>
   <h3>User Input</h3>
-    <p class="fragment">To obtain user input, use `gets`</p>
-    <p class="fragment">To print out information, use `puts` or `print`</p>
+    <p class="fragment">To obtain user input, use the `gets` keyword</p>
+    <p class="fragment">To print out information, use the `puts` or `print` keyword</p>
     <p class="fragment">Let's create our first Ruby program together!</p><br>
-    <p class="fragment">Put the code below in a file and save it as name.rb</p>
+    <p class="fragment">Put the code below in your repl and run it! What's happening on each line?</p>
     <pre><code contenteditable class="fragment ruby">
       puts "Hello there, and what's your name?"
-      name = gets
-      puts "Your name is " + name.chomp! + "? What a lovely name!"
-      puts "Pleased to meet you, " + name.chomp! + ". :)"
-    </code></pre>
-    <p class="fragment">Run your program from the command line:</p>
-    <pre><code class="fragment">
-      ruby name.rb 
+      name = gets.chomp!
+      puts "Your name is " + name + "? What a lovely name!"
+      puts "Pleased to meet you, " + name + ". :)"
     </code></pre>
 </section>
 <section>
   <h3>Let's Develop It</h3>
   <ul>
     <li>Write your own program using 'puts' and 'gets' to ask a user for their age and then tell them how old they are in dog years.</li>
-    <li>reminder: 'gets' method returns a string. To do math on it, convert it to an integer with .to_i method.</li>
+    <li>reminder: 'gets' method returns a string. To do math on it, convert it to an integer with `.to_i` method.</li>
     <pre><code class="ruby">
     #1 dog year = 7 human years
     user_age = gets.to_i
@@ -402,11 +394,23 @@
   </ul>
 </section>
 <section>
-  <h3>Homework</h3>
+  <h3>Homework Part 1</h3>
   <p><strong>Practice:</strong> Write a command line program that asks the user for the year they were born, then calculates their age in years, days, and seconds. Tell the user how old they are in these different formats. (Note: you'll be using 'gets' and 'puts' in this program, along with some math)</p>
   <p><strong>Prep:</strong> Read <a href="https://pine.fm/LearnToProgram/?Chapter=06" alt="Chp 6 of Learn to Program">Chapter 6</a> and <a href="https://pine.fm/LearnToProgram/?Chapter=07" alt="Chp 7 of Learn to Program">Chapter 7</a> of Learn To Program- don't try to do the exercises at the end yet, though.</p>
 </section>
+<section>
+  <h3>Homework Part 2</h3>
+  <p><strong>Install Ruby:</strong> We will use the first part of the <a href="http://docs.railsbridge.org/installfest/choose_your_operating_system" alt="Railsbridge Installfest Instructions">Railsbridge Installfest Instructions</a> to install Ruby. Please be sure to read the instructions for each step before copying &amp; pasting commands in your terminal.</p> 
 
+  <p>Start with: “Choose Your Operating System”<br>
+  End at the step right before: (Mac) Step #8: “Install Rails” or (Windows) Step #7 “Update Rails”</p>
+
+  <p><strong>Install a Text Editor:</strong>A text editor is used for writing code. You can use any of the following, all of which are free to download:<br>
+
+  <a href="https://www.sublimetext.com/" alt="SublimeText Text Editor">SublimeText (recommended)</a><br>
+  <a href="https://atom.io/" alt="Atom Text Editor">Atom</a><br>
+  TextWrangler (free and already installed on Mac)</p> 
+</section>
 </div>
 <footer>
   <div class="copyright">
