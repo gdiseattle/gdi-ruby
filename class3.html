@@ -100,19 +100,84 @@ end
             <li class="fragment">Conditions - if, elsif, else</li>
             <li class="fragment">Loops - while, for</li>
             <li class="fragment">Arrays - [1,2,3]</li>
-            <li class="fragment">Hashes - {"one" => 1, "two" => 2}</li>
           </ul>
         </section>
 
         <section>
           <h3>What we will cover today</h3>
           <ul>
+            <li class="fragment">Hashes</li>
             <li class="fragment">Methods</li>
             <li class="fragment">Objects</li>
             <li class="fragment">Object Oriented Programming</li>
           </ul>
         </section>
+        <!-- minutes-->
+            <section>
+                <h3>Hashes</h3>
+                <p>Hashes have curly braces and hash rockets and can be filled with any data type: integers, floats, strings, even arrays and hashes. </p>
+                <pre><code  class="ruby">
+    grades_hash = { "Jane Doe" => 10, "Jim Doe" => 6, "Jan Doe" => 8}
+    new_hash = { 1 => "a", "d" => 12, "f" => 35 }
 
+    # methods to find information about hashes 
+    new_hash.length
+    grades_hash.count 
+    grades_hash.size
+    grades_hash.has_key?("Jan Doe")
+    new_hash.has_value?(35)
+                </code></pre>
+                <p>Syntax:</p>
+                <p>{ key => value, key => value }
+            </section>
+
+            <section>
+                <h3>Accessing Elements in Hashes</h3>
+                <p>Hashes are <strong>unordered.</strong> Hashes are like dictionaries, with unique <strong>key / value</strong> pairs.</p>
+                <p>Because hashes can have any type of object as an idex, and are unordered, we must access values by their <strong>key</strong>.</p>
+                <pre><code  class="ruby">
+    grades_hash = { "Jane Doe" => 10, "Jim Doe" => 6, "Jan Doe" => 8}
+    new_hash = { 1 => "a", "d" => 12, "f" => 35 }
+
+    grades_hash["Jane Doe"]   # returns 10, the value of this key
+    new_hash["d"]             # returns 12, the value of this key
+    grades_hash.first         # returns first key/value pair... probably
+                </code></pre>
+            </section>
+
+            <section>
+                <h3>Adding &amp; Removing from Hashes</h3>
+                <pre><code  class="ruby">
+    new_hash = { 1 => "a", "d" => 12, "f" => 35 }
+
+    # add
+    new_hash["z"] = 43   # adds a new key/value pair "z" => 43 
+
+    #remove
+    new_hash.delete("d") # removes key/value pair with specified key   
+    new_hash.clear       # removes all key/value pairs 
+                </code></pre>
+            </section>
+
+            <section>
+                <h3>More Hash methods</h3>
+                <pre><code  class="ruby">
+    chapters = {
+        "My Early Home" => (1..15),
+        "The Hunt" => (16..28), 
+        "My Breaking In" => (29..46),
+        "Birtwick Park" => (46..60)
+    }
+
+    chapters.count      # returns number of key/value pairs in hash
+    chapters.keys       # returns an array of all the keys in hash
+    chapters.has_key?("How It Ended")  # returns a boolean
+    chapters.to_a       # converts hash to an array of arrays
+    chapters.invert     # returns new hash with old one's values as keys and keys as values
+                </code></pre>
+                <p>Learn more about hashes <a href="http://www.ruby-doc.org/core-2.1.1/Hash.html" alt="Ruby Docs">here</a>.</p>
+            </section>
+            
         <section>
           <h3>Methods</h3>
           <p>A <strong>method</strong> is a name for a chunk of code</p>
