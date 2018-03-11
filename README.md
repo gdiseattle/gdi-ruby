@@ -33,7 +33,7 @@ Object Oriented Programming, part II
 We will expand our knowledge of OOP by discussing classes and inheritance. We will tie together everything we've learned with a relatively complex, totally fun final project.
 
 
-###Blurb
+### Blurb
 
 Ready to start programming? Want to learn one language that you can use to build web apps and iPhone apps, do system administration, and security? Then you're ready to learn Ruby.
 
