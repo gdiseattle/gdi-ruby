@@ -49,22 +49,22 @@
             <section>
                 <h3>Review</h3>
                 <ul>
-                    <li class="fragment">Conditions - if, elsif, else</li>
-                    <li class="fragment">Loops - while, for</li>
-                    <li class="fragment">Arrays - [1,2,3]</li>
+                    <li>Conditions - if, elsif, else</li>
+                    <li>Loops - while, times, each</li>
+                    <li>Arrays - [1,2,3]</li>
                 </ul>
             </section>
 
             <section>
                 <h3>What we will cover today</h3>
                 <ul>
-                    <li class="fragment">Hashes</li>
-                    <li class="fragment">Methods</li>
-                    <li class="fragment">Objects</li>
-                    <li class="fragment">Object Oriented Programming</li>
+                    <li>Hashes</li>
+                    <li>Methods</li>
+                    <li>Objects</li>
+                    <li>Object Oriented Programming</li>
                 </ul>
             </section>
-            <!-- minutes-->
+            <!-- 15 minutes-->
             <section>
                 <h3>Hashes</h3>
                 <p>Hashes are indexed collections like arrays. Each value in a hash actually has two elements, a <strong>key</strong> and a <strong>value</strong>. They can be filled with any data type: integers, floats, strings, even arrays and hashes. </p>
@@ -114,11 +114,11 @@
                 <p>Hashes are <strong>unordered.</strong> Hashes are like dictionaries, with unique <strong>key / value</strong> pairs.</p>
                 <p>Because hashes can hold any type of objects, and are unordered, we must access values by their <strong>key</strong>.</p>
                 <pre><code  class="ruby">
-  grades_hash = { "Tasha" => 10, "Joe" => 6, "Heather" => 8 }
+  grades_hash = { "Tasha" => 12, "Joe" => 10, "Heather" => 8 }
   new_hash = { 1 => "a number!", "num_one" => 12, "num_two" => 35 }
   food_hash = { apple: "a fruit", carrot: "a vegetable" }
 
-  grades_hash["Jane Doe"]   # returns 10, the value of this key
+  grades_hash["Joe"]        # returns 10, the value of this key
   grades_hash.first         # returns first key/value pair... probably
 
   new_hash["num_one"]       # returns 12, the value of this key
@@ -135,7 +135,7 @@
     # add
     new_hash["z"] = 43   # adds a new key/value pair "z" => 43 
 
-    #remove
+    # remove
     new_hash.delete("d") # removes key/value pair with specified key   
     new_hash.clear       # removes all key/value pairs 
           </code></pre>
@@ -296,7 +296,7 @@
             <p>What can it do?</p>
             <p><strong>add, subtract, multiply, divide</strong></p><br>
             <p>What are some properties of your Number?</p>
-            <p><strong>length, odd, even</strong></p>
+            <p><strong>odd, even</strong></p>
         </section>
 
         <section>
@@ -324,7 +324,7 @@
       puts "Hello, World!"
     end
 
-    my_object.methods\
+    my_object.methods
             </code></pre>
         </section>
 
@@ -345,7 +345,7 @@
     end
 
     cookie.add_chocolate_chips(500)
-    cookie.yummy?   #=> true
+    cookie.yummy?   # => true
             </code></pre>
             <p>What would happen if we called our <strong>yummy?</strong> method before <strong>add_chocolate_chips</strong>?</p>
         </section>
@@ -366,13 +366,13 @@
 
         <section>
             <h3>OOP &amp; Easy Understanding</h3>
-            <p>Objects often take on names from their domain which makes them easy to conceptualize.</p>
-            <p>For example, without seeing my code, you can probably guess what an object called 'Bike' can do (or not do)</p>
+            <p>Objects often take on names from their domain which makes them easy to conceptualize.</p><br>
+            <p>For example, without seeing code, you can probably guess what an object called 'Bike' or 'Chair' can do (or not do), and what attributes it might have (or not have).</p>
         </section>
 
         <section>
             <h3>OOP &amp; Encapsulation</h3>
-            <p>One thing that makes code easier to maintain is Encapsulation which is one of the fundamentals of OOP.</p>
+            <p>One thing that makes code easier to maintain is Encapsulation, which is one of the fundamentals of OOP.</p>
             <p><strong>Encapsulation</strong> is a nice way of saying 'put all my properties/behaviors in my capsule where other
             objects can't touch them'.</p>
             <p>By assigning certain responsibilities to objects, code is more purposeful and less likely to be changed by
