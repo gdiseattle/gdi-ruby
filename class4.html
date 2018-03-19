@@ -69,7 +69,7 @@
   left  = left - write*1000  #  Subtract off those thousands.
 
   if write > 0
-    thousands  = englishNumber write
+    thousands  = englishNumber(write)
     numString = numString + thousands + ' thousand'
 
     if left > 0
