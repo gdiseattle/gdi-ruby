@@ -41,9 +41,9 @@
 
                 <section>
                   <h3>Welcome!</h3>
-                  <div class = "left-align">
+                  <div>
                   <p>Girl Develop It is here to provide affordable and accessible programs to learn software through mentorship and hands-on instruction.</p>
-                  <p class ="green">Some "rules"</p>
+                  <p class ="blue">Reminder! Some "Rules"</p>
                   <ul>
                     <li>We are here for you!</li>
                     <li>Every question is important</li>
@@ -63,31 +63,31 @@
                   <h3>HW: English Numbers</h3>
                   <p>You could expand the EnglishNumbers program by adding the following code to deal with thousands:</p>
                   <pre><code class="ruby">
-left  = number  #original code, set 'left' variable
+  left  = number  #original code, set 'left' variable
 
-write = left/1000          #  How many thousands left to write out?
-left  = left - write*1000  #  Subtract off those thousands.
+  write = left/1000          #  How many thousands left to write out?
+  left  = left - write*1000  #  Subtract off those thousands.
 
-if write > 0
-  thousands  = englishNumber write
-  numString = numString + thousands + ' thousand'
+  if write > 0
+    thousands  = englishNumber(write)
+    numString = numString + thousands + ' thousand'
 
-  if left > 0
-    numString = numString + ' '
+    if left > 0
+      numString = numString + ' '
+    end
   end
-end
 
-write = left/100 # this line begins the existing code that deals with hundreds
+  write = left/100 # this line begins the existing code that deals with hundreds
                   </code></pre>
                 </section>
 
                 <section>
                   <h3>HW: Wedding Numbers</h3>
                   <p>You could modify the code in the EnglishNumbers program to make it WeddingNumbers by replacing some of the added spaces with added 'and's and spaces: </p>
-                  <pre><code class="ruby">
-# numString = numString + ' '   # old code
+                    <pre><code class="ruby">
+  # numString = numString + ' '   # old code
 
-numString = numString + ' and '
+  numString = numString + ' and '
                    </code></pre>
                 </section>
 
@@ -95,16 +95,16 @@ numString = numString + ' and '
                   <h3>HW: 99 Bottles of Beer</h3>
                   <p>You could modify the code for 99 Bottles of Beer shown in Class2 to include the functionality in the EnglishNumber class: </p>
                   <pre><code class="ruby">
-require_relative 'englishnumber.rb' 
-num_bottles = 999
+  require_relative 'englishnumber.rb' 
+  num_bottles = 999
 
-while num_bottles > 0
-  puts "#{englishNumber(num_bottles)} bottles of beer on the wall, 
-  #{englishNumber(num_bottles)} bottles of beer, take one down, pass it 
-  around, #{englishNumber(num_bottles - 1)} bottles of beer on the wall!"
+  while num_bottles > 0
+    puts "#{englishNumber(num_bottles)} bottles of beer on the wall, 
+    #{englishNumber(num_bottles)} bottles of beer, take one down, pass it 
+    around, #{englishNumber(num_bottles - 1)} bottles of beer on the wall!"
 
-  num_bottles = num_bottles - 1
-end 
+    num_bottles = num_bottles - 1
+  end 
                    </code></pre>
                 </section>
 
@@ -112,7 +112,7 @@ end
                     <h3>Review</h3>
                     <ul>
                         <li>What is a method?</li>
-                        <li>Creating & calling a method</li>
+                        <li>Creating &amp; calling a method</li>
                         <li>What is an object?</li>
                     </ul>
                     <p>What would you like to see reviewed?</p>
@@ -121,19 +121,12 @@ end
                 <!-- Built in classes of Ruby: 20 minutes -->
                 <section>
                     <h3>Built in classes of Ruby</h3>
-                    <p>Ruby has many classes predefined:</p>
-                    <ul>
-                      <li>String</li>
-                      <li>Integer</li>
-                      <li>Float</li>
-                      <li>Array</li>
-                      <li>Hash</li>
-                    </ul>
-                    <p>They are commonly used object types, and have methods associated with them already. How convenient!</p> 
+                    <p>Ruby has many Classes predefined: String, Integer, Float, Array, Hash, etc.</p>
+                    <p>They are commonly used object types, and have methods associated with them already. How convenient!</p>
+                    <p>We now know how to create <strong>instances</strong> of these Classes: 
                     <pre><code contenteditable class="ruby">
-a = Array.new
-b = String.new 
-
+    array = Array.new
+    string = String.new
                     </code></pre>
                 </section>
 
@@ -142,21 +135,21 @@ b = String.new
                     <p>When we create new objects from these classes, we can do things with them immediately.</p>
                     <p>To see all methods associated with an object or class, run ".methods" on it.</p>
                     <pre><code contenteditable class="ruby">
-b = "holy cow!"
-b.methods
+  new_string = "holy cow!"
+  new_string.methods
                     </code></pre>
-                    <p>You can view all the built in classes and their associated methods in the <a href="http://www.ruby-doc.org/core-2.0.0/" alt="Ruby docuemntation">Ruby documentation</a>.</p> 
+                    <p>You can view all the built in classes and their associated methods in the <a href="http://ruby-doc.org/core-2.5.0/" alt="Ruby docuemntation">Ruby documentation</a>.</p> 
                 </section>
 
                 <section>
                     <h3>Extending a Class</h3>
                     <p>You can write new methods for the built in classes of Ruby. They will then be available to all instances of that class in your program.</p>
                     <pre><code contenteditable class="ruby">
-class String
-  def get_excited
-    return self + "!!!" 
+  class String
+    def get_excited
+      return self + "!!!" 
+    end 
   end 
-end 
                     </code></pre>
                     <p>"self" refers to the object calling the method.</p> 
                     <p>You can redefine existing methods for classes this way, too, but it's not recommended.</p>
@@ -165,59 +158,52 @@ end
       <!-- Creating a class: 20 minutes -->
                 <section>
                     <h3>Creating a Class</h3>
-                    <p>It's very easy to create your own classes in Ruby.</p>
+                    <p>We can also create our own classes in Ruby that have their own methods!</p>
                     <pre><code contenteditable class="ruby">
-# die.rb                    
-class Die
-  
-  def roll 
-     @numberShowing = 1 + rand(6) 
-    #rand(6) returns a random-ish number between 0-5
-  end 
+  # die.rb
+  class Die
+    def roll 
+      @number_showing = rand(1..6) 
+    end 
 
-  def showing 
-    return @numberShowing
-  end 
-
-end 
+    def showing 
+      return "You rolled a #{@number_showing}!"
+    end 
+  end
                     </code></pre>
-                    <p>Inside the class, define its methods.</p>
                     </section> 
                 <section>
                 <h3>Creating a Class</h3>
                 <p>You can use your class right away by loading it into IRB.</p>
+                <p>In your terminal, navigate to the folder/directory where you saved your file and enter IRB from there.</p>
                 <pre><code>
-#in irb
-load 'die.rb'
-die = Die.new
-die.roll
-puts die.showing
+  #in irb
+  load 'die.rb'
+  die = Die.new
+  die.roll
+  die.showing
                 </code></pre>
                 <p>You can use it in another file by requiring it. We'll discuss this later.</p>               
-                <!-- pause here til everyone's got this working -->
+                <!-- pause here until everyone's got this working -->
                 </section>
                 <section>
                     <h3>Refactoring a Class</h3>
                     <p>What is the result of calling the .showing method on a newly-created, un-rolled Die object?</p>
                     <p>We can avoid this by calling the roll method as part of the creation of a new instance of Die.</p>
                     <pre><code class="ruby">
-# die.rb
-class Die
-  
-  def initialize 
-    roll
-  end 
+  class Die
+    def initialize 
+      roll
+    end 
 
-  def roll 
-     @numberShowing = 1 + rand(6) 
-  end 
+    def roll 
+       @number_showing = rand(1..6)
+    end 
 
-  def showing 
-    @numberShowing
+    def showing 
+      return "You rolled a #{@number_showing}!"
+    end 
   end 
-
-end 
- 
                     </code></pre>
                 </section>
 
@@ -234,44 +220,41 @@ end
                 <section>
                 <h3>Example of creating a class</h3>
                     <pre><code contenteditable class="ruby">
-# in character.rb
-class Character 
+  # in character.rb
+  class Character 
+    def initialize(name)
+      @name = name
+      @health = 10
+    end
 
-  def initialize(name)
-    @name = name
-    @health = 10
-  end
-
-  def heal
-    @health += 6
-  end 
-
-  def adventure
-    if @health > 0
-      puts "#{@name} goes on a great adventure and meets a dragon!"
-      puts "The dragon hugged #{@name} kind of hard..."
-      @health -= 5
-    else 
-      puts "#{@name} is dead :("
-      exit
+    def heal
+      @health += 6
     end 
-  end 
 
-end
+    def adventure
+      if @health > 0
+        puts "#{@name} goes on a great adventure and meets a dragon!"
+        puts "The dragon hugged #{@name} kind of hard..."
+        @health -= 5
+      else 
+        puts "#{@name} is dead :("
+        exit
+      end 
+    end 
+  end
                     </code></pre>
                 </section>
 
                 <section>
                 <h3>Running example program in IRB</h3>
                     <pre><code contenteditable class="ruby">
-# in irb
-load 'character.rb'
-me = Character.new("Cheri")
-me.adventure
-me.heal 
-me.adventure
-# repeat until you're done having fun
-
+  # We can load our file in irb
+  load 'character.rb'
+  me = Character.new("Jess")
+  me.adventure
+  me.heal 
+  me.adventure
+  # repeat until you're done having fun
                     </code></pre>
                 </section>
         
@@ -284,70 +267,70 @@ me.adventure
 
                     <section>
                     <h3>Inheritance</h3>
-                    <p>Denote that Elf inherits from Character by using the &lt symbol</p>
+                    <p>We denote that our Elf Class inherits from our base Character Class by using the &lt; symbol</p>
                     <pre><code class="ruby">
-# in character.rb, after Character class code
-class Elf < Character
-  def twinkle
-    puts "I'm super magical!"
-  end 
-end
+  # in character.rb, after Character class code
+  class Elf < Character
+    def twinkle
+      return "I'm super magical!"
+    end 
+  end
 
-#in irb
-load 'character.rb'
-me = Elf.new("Cheri")
-me.adventure
-me.twinkle 
+  # load our file in irb
+  load 'character.rb'
+  me = Elf.new("Jess")
+  me.adventure
+  me.twinkle 
                     </code></pre>
                     <p>Notice that the initialize method was also inherited, as our new Elf knows its name and started off with 10 health.</p>
                 </section>
 
                 <section>
                     <h3>Inheritance</h3>
-                    <p><strong>Subclasses</strong> may differ from from their <strong>super classes</strong> in some ways. Methods can be overwritten when this is the case.</p>
+                    <p><strong>Subclasses</strong> (Elf) may differ from from their <strong>super classes</strong> (Character) in some ways. Methods can be overwritten when this is the case.</p>
 
                     <pre><code contenteditable class="ruby">
-# in character.rb, after Character class code
-class Elf < Character
-  def twinkle
-    puts "I'm super magical!"
+  # in character.rb, after Character class code
+  class Elf < Character
+    def twinkle
+      puts "I'm super magical!"
+    end
+
+    def heal
+      @health += 8 # it's easier to heal when you're magic
+    end 
   end
 
-  def heal
-    @health += 8 # it's easier to heal when you're magic
-  end 
-end
-
-#in irb
-load 'character.rb'
-me = Elf.new("Cheri")
-me.heal
+  # load our file in irb
+  load 'character.rb'
+  me = Elf.new("Jess")
+  me.heal
                     </code></pre>
                     <p>More information about inheritance can be found <a href="http://rubylearning.com/satishtalim/ruby_inheritance.html" alt="rubylearning.com">here</a>.</p>
                 </section>
 
                 <section>
                     <h3>Putting it all together</h3>
-                    <p>For a command line program, you need these pieces:</p>
-                    <ol>
-                      <li>File(s) containing your class definitions</li>
-                      <li>A file containing your program, which requires the class file(s)</li>
-                      <li>To call the program file from the command line (not IRB)</li>
-                    </ol>
+                    <p>For a command line program that asks for user input and lets them play your adventure game, you need these pieces:</p>
+                    <ul>
+                      <li>File(s) with your code that defines your character classes</li>
+                      <li>A file containing your program, which requires the character class file(s)</li>
+                      <li>To call the program file from the command line (not IRB), like we did in Class 2 with our adventure.rb file</li>
+                    </ul>
                     </section>
                     <section>
                     <h3>Putting it all together</h3>
                     <p>The file containing your class definitions, here called character.rb: </p>
                     <pre><code contenteditable class="ruby">
-# character.rb
+  # character.rb
 
-class Character
-  # contents of class here 
-end
+  class Character
+    # contents of class here 
+  end
 
-class Elf < Character
-  # contents of class here 
-end
+  class Elf < Character
+    # contents of class here 
+  end
                     </code></pre>
                     </section>
 
@@ -355,25 +338,25 @@ end
                     <h3>Putting it all together</h3>
                     <p>The file containing your program, here called adventure.rb, which will run from the command line and requires the class file: </p>
                     <pre><code contenteditable class="ruby">
-# adventure.rb
+  # adventure.rb
 
-require_relative 'character.rb' 
-  #file path relative to the location of adventure.rb file
-require_relative 'die.rb'
+  # file path relative to the location of adventure.rb file
+  # it is best to save these in the same directory/folder
+  require_relative 'character.rb' 
+  require_relative 'die.rb'
 
-
-puts "Your name?"
-char = Character.new(gets.chomp)
-# plus lots more adventuring..... 
+  puts "Your name?"
+  char = Character.new(gets.chomp)
+  # plus lots more adventuring..... 
                     </code></pre>
                     </section>
                     <section>
                     <h3>Putting it all together</h3>
                     <p>Call the program file from the command line: </p>
                     <pre><code contenteditable class="ruby">
-#in command line
-ruby adventure.rb
-# then have some fun!
+  # from the command line
+  ruby adventure.rb
+  # then have some fun!
                     </code></pre>
                 </section>
 
@@ -382,29 +365,20 @@ ruby adventure.rb
                     <h3>Let's Develop It</h3>
                     <p>Putting it all together: A role-playing game!</p>
                     <ul>
-                        <li>If you didn't write a Character class, copy and paste the code to get one started.</li>
+                        <li>If you didn't write a Character class, copy and paste the code from the slides to get one started.</li>
                         <li>Create a few subclasses of Character.</li>
                         <li>Write a command-line program that calls your character and die classes to allow the user to have an adventure!</li>
                         <li>Maybe user can choose their character type?</li>
                         <li>Maybe the user's progress will be dependent on outcome of dice-rolling?</li>
                     </ul>
                 </section>
-
-                <section>
-                    <h3>Questions?</h3>
-                </section>
-
-            <!-- Wrap up: 10 minutes -->
+                <!-- Wrap up: 10 minutes -->
                 <section> 
                   <h3>Further Resources</h3>
                     <table style="font-size: 24px; line-height: 1.5em;">
                         <tr>
                             <td><a href="http://www.ruby-doc.org/">Ruby-doc.org</a></td>
                             <td>Official Ruby Documentation</td>
-                        </tr>
-                       <tr>
-                            <td><a href="https://projecteuler.net">Project Euler</a></td>
-                            <td>Offers tons of small math problems to be solved via programming, plus forums to share and discuss solutions</td>
                         </tr>
                         <tr>
                             <td><a href="https://rubymonk.com/">Ruby Monk</a></td>
@@ -416,7 +390,7 @@ ruby adventure.rb
                         </tr>
                         <tr>
                             <td><a href="http://www.sinatrarb.com/">Sinatra</a></td>
-                            <td>A basic web app framework that runs on Ruby</td>
+                            <td>A small web app framework that runs on Ruby</td>
                         </tr>
                         <tr>
                             <td><a href="http://ruby.railstutorial.org/">The Rails Tutorial</a></td>
@@ -426,14 +400,12 @@ ruby adventure.rb
                             <td><a href="http://girldevelopit.com/">Girl Develop It</a></td>
                             <td>Local workshops, events, and coding sessions with awesome people</td>
                         </tr>
+                        <tr>
+                            <td><a href="http://www.seattlerb.org/" alt="Seattle rb">Seattle.rb</a></td>
+                            <td>Ruby meetup group welcome to all skill levels. They are very newbie-friendly!</td>
+                        </tr>
                     </table>
                 </section>
-
-                <section>
-                <h3>Homework</h3>
-                <p><strong>Practice:</strong>  Make your final project even bigger and better! If you're taking this class as part of a job plan, attend a <a href="http://www.seattlerb.org/" alt="Seattle rb">Seattle.rb</a> meetup and talk to a couple of strangers about what you've learned and what you're excited about doing with programming. </p>
-                </section>
-
             </div>
             <footer>
                 <div class="copyright">
